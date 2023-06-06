@@ -66,6 +66,17 @@ Link to demo:
 
 ## Usage/Examples
 
+To use the program, the user first needs to be authenticated. For simplicity sake and due to time limitations, the usernames and passwords are hardcoded inside a Hashmap in the Client. The different users and passwords that can be used in this program are:
+
+| Username | Password  
+| :-------- | :------- | 
+| `Joe` | `pass1` |
+| `Sally` | `pass2` |
+| `Mike` | `pass3` |
+| `Erica` | `pass4` |
+
+Please note these usernames and passwords are case sensitive and anything other than these will not work.
+
 Authentication Example:
 ```bash
 Welcome to SHP Chat! Please login by typing your username and password in this format <AUTH username password>:
