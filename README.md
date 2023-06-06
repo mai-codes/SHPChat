@@ -12,12 +12,6 @@ Clone the project
   git clone https://github.com/mai-codes/SHPChat
 ```
 
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
 Start the server by running the following command:
 
 ```bash
