@@ -108,5 +108,5 @@ The control messages implemented in this project so far are the authentication a
 The other type of message is a data message. This is any text sent between the clients.
 ## DFA
 
-![DFA Screenshot](<img width="757" alt="Screen Shot 2023-05-15 at 1 34 30 AM" src="https://github.com/mai-codes/SHPChat/assets/9252452/74a22c77-4c6e-4479-b8dc-83ca5db9051e">)
+![DFA Screenshot](/relative/path/to/dfa.png?raw=true "DFA Screenshot")
 
