@@ -9,7 +9,7 @@ This project represents the implementation of the Searchable Chat Protocol for C
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone [https://link-to-project](https://github.com/mai-codes/SHPChat/)
 ```
 
 Go to the project directory
