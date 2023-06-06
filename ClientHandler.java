@@ -30,6 +30,7 @@ public class ClientHandler implements Runnable {
 		} 
 	}
 
+	/* new thread for client, this is the while loop that enables messages to be sent back and forth between clients */
 	@Override
 	public void run() {
 		String messageFromClient;
@@ -44,6 +45,7 @@ public class ClientHandler implements Runnable {
 		}
 	}
 
+	/* broadcast messages to other clients */
 	public void broadcastMessage(String messageToSend) {
 		for (ClientHandler clientHandler : clientHandlers) {
 			try {
@@ -59,11 +61,13 @@ public class ClientHandler implements Runnable {
 		}
 	}
 	
+	/* remove client from server */
 	public void removeClientHandler() {
 		clientHandlers.remove(this);
 		broadcastMessage("SHP SERVER: " + clientUser + " has left the chat.");
 	}
 	
+	/* close all streams */
 	public void closeConnection() {
 		removeClientHandler();
 		try {
