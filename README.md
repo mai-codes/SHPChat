@@ -108,5 +108,5 @@ The control messages implemented in this project so far are the authentication a
 The other type of message is a data message. This is any text sent between the clients.
 ## DFA
 
-[dfa.png](https://postimg.cc/VdqpvNR8)
+[![dfa.png](https://i.postimg.cc/Fs84Pdk7/dfa.png)](https://postimg.cc/VdqpvNR8)
 
