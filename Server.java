@@ -23,6 +23,7 @@ public class Server {
 		server.createServerConnection(ExecutorWrapper.getInstance());
 	}
 
+	/* connect clients to server and begins a new client thread */
 	protected void createServerConnection(ExecutorWrapper executorWrapper)
 			throws IOException {
 		while (true) {
@@ -30,9 +31,11 @@ public class Server {
 				socket = serverSocket.accept();
 			}
 			System.out.println("New client is connected on port " + port + "!");
+			/* begin separate thread for new client */
 			ClientHandler clientThread = new ClientHandler(socket);
 			clients.add(clientThread);
 
+			/* checks for max thread pool size (4) */
 			if (clients.size() <= executorWrapper.getNumThreads()) {
 				executorWrapper.execute(clientThread);
 			} else {
