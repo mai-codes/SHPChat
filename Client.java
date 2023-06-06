@@ -19,6 +19,7 @@ public class Client {
 	private static HashMap<String, String> credentials = new HashMap<String, String>();
 	public ArrayList<String> messageLog = new ArrayList<String>();
 
+	/* constructor for the client */
 	public Client(String localhost, int port, String username) throws UnknownHostException, IOException {
 		socket = new Socket(localhost, port);
 		inputStream = new InputStreamReader(socket.getInputStream());
@@ -28,7 +29,9 @@ public class Client {
 		this.username = username;
 	}
 
+	/* main method */
 	public static void main(String args[]) throws IOException {
+		/* please note, usernames and passwords are hardcoded */
 		credentials.put("Joe", "pass1");
 	    credentials.put("Sally", "pass2");
 	    credentials.put("Mike", "pass3");
@@ -41,11 +44,13 @@ public class Client {
 		this.username = newUser;
 	}
 
+	
 	public void startConnection()
 			throws UnknownHostException, IOException {
 		System.out.println("Welcome to SHP Chat! Please login by typing your username and password in this format <AUTH username password>:");
 		Scanner kb = new Scanner(System.in);
 		String input = kb.nextLine();
+		/* begin authentication */
 		if(input.contains("AUTH")) {
 			String[] splited = input.split("\\s+");
 			if (credentials.containsKey(splited[1]) && splited[2].equals(credentials.get(splited[1]))) {
@@ -63,6 +68,7 @@ public class Client {
 		}
 	}
 
+	/* send message between clients */
 	private void sendMessage() throws IOException {
 		bufferWriter.write(username);
 		bufferWriter.newLine();
@@ -92,6 +98,7 @@ public class Client {
 	}
 
 
+	/* receive messages from other clients */
 	private void receiveMessage() {
 		new Thread(new Runnable() {
 			@Override
@@ -110,6 +117,7 @@ public class Client {
 		}).start();
 	}
 
+	/* close all streams and socket */
 	public void closeConnection() {
 		try {
 			inputStream.close();
